@@ -154,6 +154,10 @@ table {
   border-radius: 100px 100px;
   padding: 5px 15px;
   margin: 0 100px 0 0;
+  cursor: pointer;
+}
+.btn-cart:hover {
+  background-color: #d9dddd;
 }
 
 .products {
@@ -185,4 +189,8 @@ table {
   border-radius: 100px 100px;
   padding: 5px 15px;
   border: 1px solid black;
+  cursor: pointer;
+}
+.buy-btn:hover {
+  background-color: #d9dddd;
 }/*# sourceMappingURL=style.css.map */
