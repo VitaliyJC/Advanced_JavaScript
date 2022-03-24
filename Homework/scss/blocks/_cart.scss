@@ -24,6 +24,11 @@
   border-radius: 100px 100px;
   padding: 5px 15px;
   margin: 0 100px 0 0;
+  cursor: pointer;
+
+    &:hover {
+      background-color: rgb(217, 221, 221);
+  }
 }
 
 .products {
@@ -55,4 +60,9 @@
   border-radius: 100px 100px;
   padding: 5px 15px;
   border: 1px solid black;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(217, 221, 221);
+  }
 }
