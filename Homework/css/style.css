@@ -128,14 +128,43 @@ table {
   border-spacing: 0;
 }
 
-.container {
-  width: 90%;
-  margin: 0 auto;
-}
-
 .header {
   background: #020024;
   background: linear-gradient(90deg, #020024 0%, #09793c 22%, #00d4ff 100%);
+}
+.header__basket {
+  width: 500px;
+  position: absolute;
+  z-index: 2;
+  right: 0px;
+  background: white;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.header__basket__row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  justify-items: center;
+}
+.header__basket__total {
+  font-weight: bold;
+  text-align: right;
+}
+
+.btn-del {
+  border: none;
+  background-color: transparent;
+}
+.btn-del:hover {
+  color: red;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .btn__wrp {
@@ -193,4 +222,23 @@ table {
 }
 .buy-btn:hover {
   background-color: #d9dddd;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  margin: -1px;
 }/*# sourceMappingURL=style.css.map */
