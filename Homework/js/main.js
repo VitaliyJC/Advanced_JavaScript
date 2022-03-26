@@ -1,24 +1,31 @@
+'use strict';
+const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
+
 class ProductList {
   constructor(container = '.products') {
     this.container = container;
     this.goods = [];
-    this._fetchProducts();//рекомендация, чтобы метод был вызван в текущем классе
-    this.render();//вывод товаров на страницу
+    this._getProducts()
+      .then(data => {
+        this.goods = data;
+        // console.log(data);
+        this.render()
+      });
   }
-  _fetchProducts() {
-    this.goods = [
-      { id: 1, title: 'Notebook', price: 2000 },
-      { id: 2, title: 'Mouse', price: 20 },
-      { id: 3, title: 'Keyboard', price: 200 },
-      { id: 4, title: 'Gamepad', price: 50 },
-    ];
+
+  _getProducts() {
+    return fetch(`${API}/catalogData.json`)
+      .then(result => result.json())
+      .catch(error => {
+        console.log(error);
+      });
   }
+
   render() {
     const block = document.querySelector(this.container);
     for (let product of this.goods) {
       const item = new ProductItem(product);
       block.insertAdjacentHTML("beforeend", item.render());
-      //           block.innerHTML += item.render();
     }
   }
   sumItem() {
@@ -32,8 +39,8 @@ class ProductList {
 
 class ProductItem {
   constructor(product) {
-    this.title = product.title;
-    this.id = product.id;
+    this.title = product.product_name;
+    this.id = product.id_product;
     this.price = product.price;
   }
   render() {
@@ -49,25 +56,67 @@ class ProductItem {
 }
 
 let list = new ProductList();
-list.sumItem();
 
-class Cart {
-  addToCart() {
-
+//Добавление объектов в корзину
+class ProductBasket {
+  constructor(container = '.header__basket') {
+    this.container = container;
+    this.goods = [];
+    this._btnBasket(); //Появление информации по клику корзины
+    this._getBasket()
+      .then(data => {
+        this.goods = data.contents;
+        this.render()
+      });
   }
-  rmFromCart() {
 
+  //Появление информации по клику корзины
+  _btnBasket() {
+    document.getElementById('basket').addEventListener('click', () => {
+      document.querySelector(this.container).classList.toggle('visually-hidden');
+    });
   }
-  mvInCart() {
 
+  _getBasket() {
+    return fetch(`${API}/getBasket.json`)
+      .then(result => result.json())
+      .catch(error => {
+        console.log(error);
+      });
   }
+
   render() {
-
+    const block = document.querySelector(this.container);
+    for (let product of this.goods) {
+      const item = new ProductBasketItem(product);
+      block.insertAdjacentHTML("beforeend", item.render());
+    }
   }
 }
 
-class ElemCart {
+//Товары в корзине
+class ProductBasketItem {
+  constructor(product) {
+    this.title = product.product_name;
+    this.id = product.id_product;
+    this.price = product.price;
+  }
   render() {
-
+    return `  <div class="header__basket__row">
+                <div>${this.title}</div>
+                <div>
+                  <span>1</span> шт.
+                </div>
+                <div>$${this.price}</div>
+                <div class="price__wrp">
+                  $<span>${this.price}</span>
+                </div>
+                <button class="btn-del" type="button">Удалить</button>
+              </div>
+          `
   }
 }
+
+let bsk = new ProductBasket();
+
+// list.sumItem();

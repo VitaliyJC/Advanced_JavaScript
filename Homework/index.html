@@ -8,8 +8,19 @@
 <body>
     <header class="header">
       <div class="btn__wrp">
-        <button class="btn-cart" type="button">Корзина</button>
+        <button class="btn-cart" type="button" id="basket">Корзина</button>
       </div>
+
+      <div class="header__basket visually-hidden">
+        <div class="header__basket__row">
+            <div>Название</div>
+            <div>Количество</div>
+            <div>Цена за шт.</div>
+            <div>Итого</div>
+            <div>Действие</div>
+        </div>
+      </div>
+    </div>
     </header>
     <main class="container">
         <div class="products"></div>
