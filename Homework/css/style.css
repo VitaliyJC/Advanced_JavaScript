@@ -1,244 +1,171 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  vertical-align: baseline;
+body{
+    font-family: 'SF Pro Display', sans-serif;
+}
+header{
+    display: flex;
+    background-color: #2f2a2d;
+    justify-content: space-between;
+    color: #fafafa;
+    padding: 30px 80px;
+}
+button:focus{
+    outline: none;
+}
+.logo{
+
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.btn-cart{
+    background-color: #fafafa;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    color: #2f2a2d;
+    border-radius: 5px;
+    transition: all ease-in-out .4s;
+    cursor: pointer;
+}
+.btn-cart:hover{
+    background-color: transparent;
+    border-color: #fafafa;
+    color: #fafafa;
+}
+.btn-cart, .logo{
+    align-self: center;
+}
+/*.products {*/
+/*display: flex;*/
+/*justify-content: space-between;*/
+/*flex-wrap: wrap;*/
+/*padding: 40px 80px;*/
+/*}*/
+.products{
+    column-gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-rows: 1fr;
+    padding: 40px 80px;
+    justify-content: space-between;
+}
+p {
+    margin: 0 0 5px 0;
+}
+.product-item{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+img {
+    max-width: 100%;
+    height: auto
+}
+.desc {
+    border: 1px solid #c0c0c040;
+    padding: 15px
+}
+.cart{
+    position: relative;
+}
+.cart-block{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.62);
+    border-radius: 5px;
+    box-sizing: border-box;
+    right: 0;
+    top: 130%;
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    color: black;
+    width: 300px;
 }
 
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+.invisible{
+    display: none;
+}
+.cart-block:before{
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -10px;
+    right: 35px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
 }
 
-body {
-  line-height: 1;
+.buy-btn, .del-btn{
+    margin-top: 5px;
+    background-color: #2f2a2d;
+    padding: 5px 15px;
+    border: 1px solid transparent;
+    color: #fafafa;
+    border-radius: 5px;
+    transition: all ease-in-out .4s;
+    cursor: pointer;
 }
-
-ol,
-ul {
-  list-style: none;
+.buy-btn:hover, .del-btn:hover{
+    background-color: #fafafa;
+    color: #2f2a2d;
+    border: 1px solid #2f2a2d;
 }
-
-blockquote,
-q {
-  quotes: none;
+.cart-item {
+    display: flex;
+    justify-content: space-between;
 }
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
+.cart-item:not(:last-child){
+    margin-bottom: 20px;
 }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+.product-bio{
+    display: flex;
 }
-
-.header {
-  background: #020024;
-  background: linear-gradient(90deg, #020024 0%, #09793c 22%, #00d4ff 100%);
+.cart-item img{
+    align-self: flex-start;
+    margin-right: 15px;
 }
-.header__basket {
-  width: 500px;
-  position: absolute;
-  z-index: 2;
-  right: 0px;
-  background: white;
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 3px;
-  font-size: 14px;
+.product-single-price{
+    color: #474747;
+    font-size: 0.5em;
 }
-.header__basket__row {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid black;
-  padding-bottom: 10px;
-  justify-items: center;
+.product-price{
+    margin-left: 30px;
 }
-.header__basket__total {
-  font-weight: bold;
-  text-align: right;
+.product-desc{
+    max-width: 150px;
 }
-
-.btn-del {
-  border: none;
-  background-color: transparent;
+.product-quantity {
+    margin-top: 15px;
+    font-size: 0.75em;
 }
-.btn-del:hover {
-  color: red;
-  cursor: pointer;
-  text-decoration: underline;
+.right-block{
+    text-align: right;
 }
-
-.btn__wrp {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  min-height: 50px;
-  justify-content: flex-end;
+.btn-search {
+    background-color: transparent;
+    border: none;
+    color: #fafafa;
+    font-size: 1.2em;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
 }
-
-.btn-cart {
-  font-weight: bold;
-  display: block;
-  background-color: white;
-  border: none;
-  border-radius: 100px 100px;
-  padding: 5px 15px;
-  margin: 0 100px 0 0;
-  cursor: pointer;
+.search-form{
+    position: relative;
+    margin-right: 50px;
+    display: inline-block;
 }
-.btn-cart:hover {
-  background-color: #d9dddd;
+.search-field:focus{
+    outline: none;
 }
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+.search-field {
+    box-sizing: border-box;
+    width: 200px;
+    color: #fafafa;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fafafa;
 }
-
-.product-item {
-  margin: 40px 0 0 0;
-  padding: 10px;
-  max-width: 300px;
-  border: 1px solid black;
-}
-
-.item__title {
-  margin: 10px 0 0 0;
-}
-
-.item__price {
-  margin: 10px 0 0 0;
-}
-
-.buy-btn__wrp {
-  text-align: right;
-}
-
-.buy-btn {
-  margin: 10px 0 0 0;
-  border-radius: 100px 100px;
-  padding: 5px 15px;
-  border: 1px solid black;
-  cursor: pointer;
-}
-.buy-btn:hover {
-  background-color: #d9dddd;
-}
-
-.container {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.visually-hidden {
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-  margin: -1px;
-}/*# sourceMappingURL=style.css.map */
