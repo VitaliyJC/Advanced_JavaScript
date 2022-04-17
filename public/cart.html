@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="app">
+
+    <!--Header_start-->
+    <header class="header">
+
+      <!--Navigation_start-->
+      <div class="header__wrp container">
+
+        <div class="header__logo-form-wrp">
+          <a class="header__logo" href="index.html">
+            <picture>
+              <source srcset="./img/logo.webp" type="image/webp">
+              <img class="header__logo-img" src="./img/logo.png" alt="logo" loading="lazy">
+            </picture>
+          </a>
+          <section class="header__search">
+            <h2 class="visually-hidden">Header search</h2>
+            <button class="header__search-btn" type="submit" id="header__search-btn" aria-label="search">
+              <svg class="white-icon">
+                <use xlink:href="./img/sprite.svg#loupe"></use>
+              </svg>
+            </button>
+            <form class="header__search-form" action="#" id="header__search-input">
+              <label for="search__form" class="visually-hidden">search</label>
+              <input class="header__search-input" type="search" placeholder="Search" id="search__form">
+            </form>
+          </section>
+        </div>
+        <div>
+          <button class="header__menu-btn" type="button" id="header__menu-btn" aria-label="menu">
+            <svg class="white-icon">
+              <use xlink:href="./img/sprite.svg#burger"></use>
+            </svg>
+          </button>
+          <a class="header__link" href="registration.html">
+            <svg class="white-icon">
+              <use xlink:href="./img/sprite.svg#person"></use>
+            </svg>
+          </a>
+          <a class="header__link" href="#">
+            <svg class="white-icon">
+              <use xlink:href="./img/sprite.svg#cart"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <!--Navigation_end-->
+
+      <!--Menu_start-->
+      <nav class="header__nav" id="menu">
+        <div class="menu__wrapper" id="menu__wrapper">
+          <button class="header__exit-btn" type="button" id="header__exit-btn" aria-label="exit">
+            <svg class="exit-icon">
+              <use xlink:href="./img/sprite.svg#exit"></use>
+            </svg>
+          </button>
+          <h2 class="header__nav-title">menu</h2>
+          <ul class="header__nav-list">
+            <li class="header__nav-item nav-sub-item">
+              <h4 class="nav-sub-item-person">
+                <a class="nav-sub-item__link-person" href="#">man</a>
+              </h4>
+              <ul class="nav-sub-item__title">
+                <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Accessories</a></li>
+                <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Bags</a></li>
+                <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Denim</a></li>
+                <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">T-Shirts</a></li>
+              </ul>
+            </li>
+            <li class="header__nav-item nav-sub-item">
+              <h4 class="nav-sub-item-person">
+                <a class="nav-sub-item__link-person" href="#">woman</a>
+              </h4>
+              <ul class="nav-sub-item__title">
+                <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Accessories</a></li>
+                <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Polos</a></li>
+                <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">T-Shirts</a></li>
+                <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Jackets & Coats</a></li>
+              </ul>
+            </li>
+            <li class="header__nav-item nav-sub-item">
+              <h4 class="nav-sub-item-person">
+                <a class="nav-sub-item__link-person" href="#">kids</a>
+              </h4>
+              <ul class="nav-sub-item__title">
+                <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Accessories</a></li>
+                <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Jackets & Coats</a></li>
+                <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Polos</a></li>
+                <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">T-Shirts</a></li>
+                <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Shirts</a></li>
+                <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Bags</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!--Menu_end-->
+
+    </header>
+    <!--Header_end-->
+
+    <!--Shopping-cart_start-->
+    <section class="cart">
+      <div class="cart__main-bgc">
+        <h1 class="cart__main container">shopping cart</h1>
+      </div>
+      <div class="cart__wrapper container">
+        <div class="cart__products">
+          <ul class="cart__products-list">
+            <li class="cart__products-item goods">
+              <div class="goods__img-wrapper">
+                <picture>
+                  <source srcset="./img/goods-1.webp" type="image/webp">
+                  <img class="goods__img" src="./img/goods-1.jpg" alt="goods_in_cart" loading="lazy">
+                </picture>
+              </div>
+              <div class="goods__item-wrapper">
+                <h2 class="goods__item-title">mango people t-shirt</h2>
+                <ul class="goods__item">
+                  <li class="goods__list">Price: <span class="goods__price">$300</span></li>
+                  <li class="goods__list">Color: Red</li>
+                  <li class="goods__list">Size: Xl</li>
+                  <li class="goods__list">
+                    <form class="goods__item-quantity" action="#">
+                      <label for="quantity-1" class="visually-hidden">quantity</label>
+                      Quantity:
+                      <input class="goods__item-input" type="text" placeholder="0" value="2" id="quantity-1">
+                    </form>
+                  </li>
+                </ul>
+              </div>
+              <div class="goods__item-btn-warpper">
+                <button class="goods__item-btn" type="submit" id="delet-btn1" aria-label="exit">
+                  <svg class="exit-cart">
+                    <use xlink:href="./img/sprite.svg#exit"></use>
+                  </svg>
+                </button>
+              </div>
+            </li>
+
+            <li class="cart__products-item goods">
+              <div class="goods__img-wrapper">
+                <picture>
+                  <source srcset="./img/goods-2.webp" type="image/webp">
+                  <img class="goods__img" src="./img/goods-2.jpg" alt="goods_in_cart" loading="lazy">
+                </picture>
+              </div>
+              <div class="goods__item-wrapper">
+                <h2 class="goods__item-title">mango people t-shirt</h2>
+                <ul class="goods__item">
+                  <li class="goods__list">Price: <span class="goods__price">$300</span></li>
+                  <li class="goods__list">Color: Red</li>
+                  <li class="goods__list">Size: Xl</li>
+                  <li class="goods__list">
+                    <form class="goods__item-quantity" action="#">
+                      <label for="quantity-2" class="visually-hidden">quantity</label>
+                      Quantity:
+                      <input class="goods__item-input" type="text" placeholder="0" value="2" id="quantity-2">
+                    </form>
+                  </li>
+                </ul>
+              </div>
+              <div class="goods__item-btn-warpper">
+                <button class="goods__item-btn" type="submit" id="delet-btn2" aria-label="exit">
+                  <svg class="exit-cart">
+                    <use xlink:href="./img/sprite.svg#exit"></use>
+                  </svg>
+                </button>
+              </div>
+            </li>
+          </ul>
+
+          <div class="cart__products-btn-wrapper">
+            <button class="cart__products-btn" type="submit" id="clear-btn" aria-label="clear_shopping_cart">clear
+              shopping
+              cart</button>
+            <button class="cart__products-btn" type="submit" id="continue-btn" aria-label="continue_shopping">continue
+              shopping</button>
+          </div>
+        </div>
+        <div class="cart__form">
+          <form class="cart__adr" action="#">
+            <label for="adr" class="visually-hidden">adress</label>
+            <fieldset class="cart__adr-title">
+              <legend class="cart__adr-text">shipping adress</legend>
+              <input class="cart__adr-main" type="text" placeholder="Bangladesh" id="adr">
+              <input class="cart__adr-main" type="text" placeholder="State">
+              <input class="cart__adr-main" type="text" placeholder="Postcode / Zip">
+              <button class="cart__adr-btn" type="submit" id="adr-btn" aria-label="get_a_quote">get a
+                quote</button>
+            </fieldset>
+          </form>
+          <section class="cart__order">
+            <h2 class="visually-hidden">total price</h2>
+            <div class="cart__order-subprice">
+              <p class="cart__order-sub">sub total</p>
+              <p class="cart__order-sub">$900</p>
+            </div>
+            <div class="cart__order-subprice">
+              <p class="cart__order-total">grand total</p>
+              <p class="cart__order-total-pink">$900</p>
+            </div>
+            <hr class="cart__order-line">
+            <div class="cart__order-btn-wrapper">
+              <button class="cart__order-btn" type="submit" aria-label="proceed_to_checkout">proceed to
+                checkout</button>
+            </div>
+          </section>
+        </div>
+      </div>
+
+    </section>
+    <!--Shopping-cart_end-->
+
+    <!--Footer_start-->
+    <footer class="footer">
+      <div class="footer__sub-rev container">
+        <!-- Review_start -->
+        <section class="footer__about sub-rev">
+          <h2 class="visually-hidden">Blockquote</h2>
+          <div class="footer__review">
+            <picture>
+              <source srcset="./img/face.webp" type="image/webp">
+              <img class="footer__review-icon" src="./img/face.png" alt="face" loading="lazy">
+            </picture>
+            <blockquote class="footer__review-comment">“Vestibulum quis porttitor dui! Quisque viverra nunc mi, a
+              pulvinar
+              purus
+              condimentum“
+            </blockquote>
+          </div>
+          <!-- Review_end -->
+
+          <!-- Subscribe_start -->
+          <section class="footer__subscribe">
+            <h2 class="visually-hidden">Footer subscribe</h2>
+            <p class="footer__subscribe__heading">Subscribe</p>
+            <p class="footer__subscribe__text">for our newletter and promotion</p>
+            <form class="footer__subscribe__form" action="#">
+              <label for="email" class="visually-hidden">email</label>
+              <input class="footer__subscribe__form-input" type="email" value="Enter Your Email" id="email">
+              <button class="footer__subscribe__form-btn" type="submit" aria-label="subscribe">Subscribe</button>
+            </form>
+          </section>
+        </section>
+        <!-- Subscribe_end -->
+      </div>
+
+      <!-- Social_start -->
+      <div class="footer__box__wrapper">
+        <section class="footer__box container">
+          <h2 class="visually-hidden">Socials</h2>
+          <!-- Copy_start -->
+          <p class="footer__copy">&copy;2021 Brand All Rights Reserved.</p>
+          <!-- Copy_end -->
+          <section class="footer__socials">
+            <h3 class="visually-hidden">Socials links</h3>
+            <ul class="footer__socials__list">
+              <li class="footer__socials__item">
+                <a class="footer__socials__item-link" href="#">
+                  <svg class="black-icon">
+                    <use xlink:href="./img/sprite.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__socials__item">
+                <a class="footer__socials__item-link" href="#">
+                  <svg class="black-icon">
+                    <use xlink:href="./img/sprite.svg#inst"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__socials__item">
+                <a class="footer__socials__item-link" href="#">
+                  <svg class="black-icon">
+                    <use xlink:href="./img/sprite.svg#pin"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__socials__item">
+                <a class="footer__socials__item-link" href="#">
+                  <svg class="black-icon">
+                    <use xlink:href="./img/sprite.svg#twit"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </section>
+          <!-- Social_end-->
+        </section>
+      </div>
+    </footer>
+    <!--Footer_end-->
+
+  </div>
+
+  <!--Script_start-->
+  <script src="./js/vue.js"></script>
+  <script src="./js/ProductComponent.js"></script>
+  <script src="./js/SearchComponent.js"></script>
+  <script src="./js/CartComponent.js"></script>
+  <script src="./js/main.js"></script>
+  <!--Script_end-->
+
+</body>
+
+</html>

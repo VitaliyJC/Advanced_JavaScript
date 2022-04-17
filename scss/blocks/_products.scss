@@ -1,0 +1,251 @@
+/* overlay_products_end*/
+
+.products {
+   padding: 96px 0 0 0;
+
+   @include tablet {
+      padding: 155px 0 0 0;
+   }
+
+   @include mobile {
+      padding: 64px 0 0 0;
+   }
+
+   &__title {
+
+      @include font(30px, 36px);
+
+      text-align: center;
+   }
+
+   &__subtitle {
+      padding: 6px 0 48px 0;
+      text-align: center;
+      color: $grey-text;
+
+      @include tablet {
+         padding: 3px 0 73px 0;
+      }
+
+      @include mobile {
+         padding: 0 0 65px 0;
+      }
+   }
+
+
+   &__list {
+      margin: 0 0 18px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      @include tablet {
+         margin: 0 0 16px 0;
+         justify-content: center;
+      }
+
+      @include mobile {
+         margin: 0;
+      }
+
+      &-overlay {
+         position: relative;
+
+         &:before {
+            display: none;
+            content: '';
+            width: 360px;
+            min-height: 420px;
+            background: rgba(58, 56, 56, 0.86);
+            position: absolute;
+            top: 0;
+         }
+      }
+   }
+
+
+   &__item {
+      height: 582px;
+      width: 360px;
+      margin: 0 0 30px 0;
+
+      &:not(:nth-child(3n)) {
+         margin: 0 30px 30px 0;
+      }
+
+      &:nth-child(2n) {
+         @include tablet {
+            margin: 0 0 16px 0;
+         }
+      }
+
+      &:not(:nth-child(2n)) {
+         @include tablet {
+            margin: 0 16px 16px 0;
+         }
+
+         &:nth-child(2n) {
+            @include mobile {
+               margin: 0 0 16px 0;
+            }
+         }
+
+         &:not(:last-child) {
+            @include mobile {
+               margin: 0 0 16px 0;
+            }
+         }
+      }
+
+      &:hover .products__item-cart,
+      &:hover .products__list-overlay::before {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      &:focus-within .products__item-cart,
+      &:focus-within .products__list-overlay::before {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      &-cart {
+         display: none;
+         background-color: transparent;
+         border: 1px solid $white-text;
+         position: absolute;
+         top: 35%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: 139px;
+         height: 44px;
+         transition: border $animation-speed, color $animation-speed, display $animation-speed, align-items $animation-speed, justify-content $animation-speed;
+
+         &:hover {
+            cursor: pointer;
+         }
+
+         &:hover .white-icon {
+            fill: $pink-color;
+         }
+
+         &:hover &-text {
+            color: $pink-color;
+         }
+
+         &:hover {
+            border: 1px solid $pink-color;
+         }
+
+         &:focus-visible .white-icon {
+            fill: $pink-color;
+         }
+
+         &:focus-visible &-text {
+            color: $pink-color;
+         }
+
+         &:focus-visible {
+            border: 1px solid $pink-color;
+         }
+
+         &:focus-visible {
+            color: $white-text;
+         }
+
+         &:active .white-icon {
+            fill: $pink-effects;
+         }
+
+         &:active &-text {
+            color: $pink-effects;
+         }
+
+         &:active {
+            border: 1px solid $pink-effects;
+         }
+
+         &-text {
+            color: $white-text;
+            padding: 0 0 0 11px;
+            transition: color $animation-speed;
+         }
+      }
+
+      &-img {
+         width: 360px;
+         height: 420px;
+         background-color: $grey-bkg;
+      }
+
+      &-title {
+         padding: 25px 0 13px 16px;
+         text-transform: uppercase;
+         font-size: 13px;
+         color: $black;
+      }
+
+      &-text {
+         width: 314px;
+         padding: 0 28px 0 16px;
+         color: $grey-text;
+
+         @include font(14px, 17px, 300);
+      }
+
+      &-price {
+         padding: 18px 0 20px 16px;
+         line-height: 19px;
+         color: $pink-text;
+      }
+
+      &-wrapper {
+         background-color: $grey-bkg;
+         width: 360px;
+      }
+   }
+
+
+   &__link {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      width: 360px;
+   }
+
+   &__btn {
+      background-color: $white-text-btm;
+      padding: 15px 39px;
+      text-decoration: none;
+      color: $pink-text;
+      border: 1px solid $pink-text;
+      transition: background-color $animation-speed, color $animation-speed;
+
+      @include font(16px, 19px);
+
+      &-wrapper {
+         margin: 0 0 95px 0;
+         text-align: center;
+
+         @include tablet {
+            margin: 0 0 65px 0;
+         }
+      }
+
+      &:hover {
+         background-color: $pink-color;
+         color: $white-text;
+      }
+
+      &:focus-visible {
+         background-color: $pink-color;
+         color: $white-text;
+      }
+
+      &:active {
+         background-color: $pink-text;
+      }
+   }
+}

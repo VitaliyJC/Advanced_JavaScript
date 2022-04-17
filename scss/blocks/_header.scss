@@ -1,0 +1,220 @@
+.header {
+   background-color: $black;
+   min-height: 75px;
+
+   &__wrp {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0 18px;
+
+      &-right {
+        position: relative;
+      }
+   }
+
+   &__logo {
+
+      &-img {
+         width: 44px;
+         height: 38px;
+      }
+
+      &-form {
+         &-wrp {
+            display: flex;
+
+            @include tablet {
+               margin: 0 0 0 16px;
+            }
+
+            @include mobile {
+               margin: 0;
+            }
+         }
+      }
+   }
+
+   &__search {
+      display: flex;
+      align-items: center;
+
+
+      &-btn {
+         margin: 0 0 0 41px;
+         background-color: transparent;
+         border: none;
+
+         &:hover .white-icon {
+            fill: $pink-color;
+            cursor: pointer;
+         }
+
+         &:active .white-icon {
+            fill: $pink-effects;
+         }
+      }
+
+      &-input {
+         border: none;
+         border-radius: 30px;
+         padding: 10px;
+         width: 200%;
+
+         @include mobile {
+            width: 100%;
+         }
+      }
+   }
+
+   &__menu {
+
+      &-btn {
+         border: none;
+         background-color: transparent;
+
+         &:hover .white-icon,
+         &:focus-visible .white-icon {
+            fill: $pink-color;
+            cursor: pointer;
+         }
+
+         &:active .white-icon {
+            fill: $pink-effects;
+         }
+      }
+   }
+
+   &__link {
+      text-decoration: none;
+      margin: 0 0 0 33px;
+      position: relative;
+      background-color: transparent;
+      border: none;
+
+      &:hover .white-icon,
+      &:focus-visible .white-icon {
+         fill: $pink-color;
+         cursor: pointer;
+      }
+
+      &:active .white-icon {
+         fill: $pink-effects;
+      }
+
+      @include mobile {
+         display: none;
+      }
+
+      &-value {
+      display: inline-block;
+      width: 19px;
+      height: 19px;
+      color: white;
+      background: #f16d7f;
+      border-radius: 50%;
+      position: absolute;
+      text-align: center;
+      right: -2px;
+      top: -5px;
+      font-size: 12px;
+      line-height: 19px;
+      }
+   }
+
+
+   &__nav {
+      height: 764px;
+      background-color: $white-text;
+      width: 232px;
+      position: absolute;
+      right: 0;
+      top: 77px;
+      z-index: 1;
+      box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+      overflow: hidden;
+
+      transition: max-width $animation-speed;
+
+      &-title {
+         @include font (100%, 17px, 900);
+         padding: 9px 0 0 0;
+         text-transform: uppercase;
+         color: $black;
+      }
+
+      &-list {
+         padding: 24px 0 0 0;
+      }
+
+      &-item:not(:first-child) {
+         padding: 20px 0 0 0;
+      }
+   }
+
+   &__exit-btn {
+      background-color: transparent;
+      border: none;
+      align-self: flex-end;
+
+      &:hover .exit-icon,
+      &:focus-visible .exit-icon {
+         fill: $pink-color;
+         cursor: pointer;
+      }
+
+      &:active .exit-icon {
+         fill: $pink-effects;
+      }
+   }
+
+   &__basket {
+        width: 500px;
+        position: absolute;
+        z-index: 2;
+        right: 0px;
+        background: white;
+        padding: 10px;
+        border: 1px solid #ebebeb;
+        border-radius: 3px;
+        font-size: 14px;
+
+      &__row {
+        display: grid;
+        grid-template-columns: minmax(10em, max-content) 1fr 1fr (max-content);
+        gap: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid $black;
+        padding-bottom: 10px;
+
+        &-btn {
+        background-color: $pink-text;
+        text-decoration: none;
+        color: $white-text;
+        border: 1px solid $pink-text;
+        transition: background-color $animation-speed, color $animation-speed;
+
+          &:hover {
+            background-color: $pink-effects;
+            cursor: pointer;
+          }
+        }
+      }
+
+      &__total {
+        font-weight: bold;
+        text-align: right;
+      }
+    }
+
+}
+
+.menu__wrapper {
+   display: flex;
+   flex-direction: column;
+   padding: 16px 16px 0 34px;
+}
+
+.basketHeader {
+  font-weight: bold;
+}

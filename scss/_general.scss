@@ -1,0 +1,48 @@
+body {
+   @include font (14px, 16px, normal);
+   font-family: 'Lato', sans-serif;
+   box-sizing: border-box;
+}
+
+input {
+   box-sizing: border-box;
+}
+
+button {
+   font-family: "Lato",
+      sans-serif;
+}
+
+.container {
+   max-width: 72%;
+   margin: 0 auto;
+}
+
+.visually-hidden {
+   position: absolute;
+   white-space: nowrap;
+   width: 1px;
+   height: 1px;
+   overflow: hidden;
+   border: 0;
+   padding: 0;
+   clip: rect(0 0 0 0);
+   clip-path: inset(50%);
+   margin: -1px;
+}
+
+.sprite {
+   display: none;
+}
+
+@media (max-width: $tablet-width) {
+   .container {
+      max-width: 96%;
+   }
+}
+
+@media (max-width: $mobile-width) {
+   .container {
+      max-width: 92%;
+   }
+}

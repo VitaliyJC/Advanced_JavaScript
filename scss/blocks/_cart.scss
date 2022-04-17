@@ -1,0 +1,276 @@
+.cart {
+
+   &__main {
+      @include font(24px, 29px);
+      color: $pink-text;
+      text-transform: uppercase;
+      padding: 60px;
+
+      @include tablet {
+         padding: 60px 0;
+      }
+
+      @include mobile {
+         text-align: center;
+      }
+
+      &-bgc {
+         background-color: #F8F3F4;
+         min-height: 148px;
+      }
+   }
+
+   &__wrapper {
+      display: flex;
+
+      @include tablet {
+         flex-direction: column;
+      }
+   }
+
+   &__products {
+      margin: 96px 0 128px 0;
+      min-width: 56%;
+
+      @include tablet {
+         margin: 59px 0 64px 0;
+      }
+
+      @include mobile {
+         margin: 39px 0 48px 0;
+         width: 100%;
+      }
+
+      &-list {
+         margin: 0 0 72px 0;
+      }
+
+      &-item {
+
+         &:nth-child(1) {
+            margin: 0 0 40px 0;
+
+            @include mobile {
+               margin: 0 0 29px 0;
+            }
+         }
+      }
+
+      &-btn {
+         @include font(14px, 17px, 300);
+         padding: 17px 40px;
+         text-transform: uppercase;
+         border: 1px solid $grey-border;
+         background-color: transparent;
+         transition: background-color $animation-speed,
+            color $animation-speed,
+            border $animation-speed;
+
+         @include mobile {
+            @include font(12px, 14px);
+            padding: 9px 18px;
+         }
+
+         &:hover {
+            background-color: $pink-color;
+            color: $white-text;
+            border: 1px solid $pink-text;
+         }
+
+         &:focus-visible {
+            background-color: $pink-color;
+            color: $white-text;
+            border: 1px solid $pink-text;
+            outline: 1px solid $pink-text;
+         }
+
+         &:active {
+            background-color: $pink-text;
+            border: 1px solid $pink-text;
+         }
+
+         &-wrapper {
+            display: flex;
+            justify-content: space-between;
+
+            @include tablet {
+               justify-content: space-evenly;
+            }
+
+            @include mobile {
+               justify-content: space-between;
+            }
+         }
+      }
+   }
+
+   &__form {
+      margin: 96px 0 128px 129px;
+      width: 100%;
+
+      @include tablet {
+         margin: 0 0 128px 0;
+         display: flex;
+      }
+
+      @include mobile {
+         margin: 0 0 96px 0;
+         flex-direction: column;
+      }
+   }
+
+   &__adr {
+
+      @include tablet {
+         width: 50%;
+         margin: 0 7px 0 0;
+      }
+
+      @include mobile {
+         width: 100%;
+         margin: 0;
+      }
+
+
+      &-main {
+         display: flex;
+         flex-direction: column;
+         margin: 20px 0 0 0;
+         width: 100%;
+         height: 46px;
+         border: 1px solid $grey-border;
+         outline: none;
+         padding: 0 0 0 17px;
+
+         &::placeholder {
+            @include font(13px, 16px, 300);
+            color: $grey-text-form
+         }
+
+         &:focus {
+            outline: none;
+            border: 1px solid $pink-text;
+         }
+      }
+
+      &-text {
+         @include font(16px, 19px, 300);
+         color: black;
+         text-transform: uppercase;
+      }
+
+      &-btn {
+         @include font(11px, 13px, 300);
+         padding: 11px 17px;
+         margin: 23px 0 0 0;
+         text-transform: uppercase;
+         border: 1px solid $grey-border;
+         background-color: transparent;
+         transition: background-color $animation-speed, color $animation-speed, border $animation-speed, outline $animation-speed;
+
+         &::placeholder {
+            @include font(13px, 16px, 300);
+            color: $grey-text-form;
+         }
+
+         &:hover {
+            background-color: $pink-color;
+            color: $white-text;
+            border: 1px solid $pink-text;
+         }
+
+         &:focus-visible {
+            background-color: $pink-color;
+            color: $white-text;
+            border: 1px solid $pink-text;
+            outline: 1px solid $pink-text;
+         }
+
+         &:active {
+            background-color: $pink-text;
+            border: 1px solid $pink-text;
+         }
+      }
+   }
+
+   &__order {
+      margin: 57px 0 0 0;
+      background-color: $pink-bkg;
+      width: 100%;
+
+      @include tablet {
+         width: 50%;
+         margin: 40px 0 0 7px;
+         height: 214px;
+      }
+
+      @include mobile {
+         width: 100%;
+         margin: 48px 0 0 0;
+         height: 214px;
+      }
+
+      &-subprice {
+         display: flex;
+         justify-content: right;
+         margin: 0 0 21px 0;
+
+         @include tablet {
+            margin: 0 0 12px 0;
+         }
+      }
+
+      &-sub {
+         margin: 35px 32px 0 0;
+         @include font(11px, 13px);
+         text-transform: uppercase
+      }
+
+      &-total {
+         margin: 12px 32px 0 0;
+         @include font(16px, 19px, 300);
+         text-transform: uppercase;
+
+         &-pink {
+            margin: 12px 32px 0 0;
+            @include font(16px, 19px, 300);
+            text-transform: uppercase;
+            font-weight: bold;
+            color: $pink-btn;
+
+         }
+      }
+
+      &-line {
+         width: 76%;
+         border: none;
+         border-top: 1px solid #E2E2E2;
+      }
+
+      &-btn {
+         color: $white-text;
+         background-color: $pink-btn;
+         padding: 16px 42px;
+         margin: 10px 0 42px 0;
+         text-transform: uppercase;
+         border: none;
+         transition: background-color $animation-speed;
+
+         &:hover {
+            background-color: $pink-effects;
+         }
+
+         &:focus {
+            background-color: $pink-effects;
+         }
+
+         &:active {
+            background-color: $pink-btn;
+         }
+
+         &-wrapper {
+            text-align: center;
+         }
+      }
+   }
+}
