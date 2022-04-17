@@ -1,0 +1,42 @@
+.nav-sub-item {
+
+   &__title {
+      padding: 0 0 0 21px;
+   }
+
+   &__list {
+      margin: 12px 0 0 0;
+   }
+
+   &__link {
+      line-height: 17px;
+      text-decoration: none;
+      color: $grey-text;
+      transition: color $animation-speed;
+
+      &:hover,
+      &:focus {
+         color: $pink-text;
+         cursor: pointer;
+      }
+
+      &:active {
+         color: $pink-effects;
+      }
+
+      &-person {
+         line-height: 17px;
+         text-decoration: none;
+         color: $pink-text;
+         text-transform: uppercase;
+
+         &:active {
+            color: $pink-effects;
+         }
+      }
+   }
+}
+
+.menu--hidden {
+   max-width: 0;
+}

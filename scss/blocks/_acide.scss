@@ -1,0 +1,54 @@
+.aside {
+   background-color: $black;
+   align-items: center;
+
+   &__list {
+      display: flex;
+      justify-content: space-between;
+      padding: 104px 0 104px 0;
+
+      @include tablet {
+         padding: 48px 0 64px 0;
+         align-items: center;
+         flex-direction: column;
+      }
+
+      @include mobile {
+         padding: 48px 0 81px 0;
+      }
+   }
+
+   &__item {
+      width: 32%;
+      text-align: center;
+
+      @include tablet {
+         width: 40%;
+      }
+
+      @include mobile {
+         width: 100%;
+      }
+
+      &-title {
+         padding: 28px 0 16px 0;
+         color: $white-text-btm;
+         @include font(20px, 24px, 700)
+      }
+
+      &-text {
+         @include font (14px, 17px, 300);
+         color: $white-text-btm;
+
+         @include mobile {
+            width: 100%;
+         }
+      }
+
+      &:not(:first-child) {
+         @include tablet {
+            margin: 48px 0 0 0;
+         }
+      }
+   }
+}

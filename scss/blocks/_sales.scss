@@ -1,0 +1,174 @@
+.sales {
+
+   &__list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+   }
+
+   &__item {
+      width: 31%;
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border: none;
+      background-size: cover;
+
+      @include tablet {
+         min-height: 168px;
+      }
+
+      @include mobile {
+         width: 100%;
+         min-height: 249px;
+      }
+
+      &:not(:nth-child(1)) {
+         @include mobile {
+            margin: 32px 0 0 0;
+         }
+      }
+
+      &--women {
+         position: relative;
+         background-image: url(../img/sale-women.webp);
+         background-color: $pink-bkg;
+
+         &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background: rgba(33, 22, 22, 0.7);
+            transition: background $animation-speed;
+         }
+
+         &:hover::after {
+            background: rgba(33, 22, 22, 0.5);
+            cursor: pointer;
+         }
+
+         &:focus-within::after {
+            background: rgba(33, 22, 22, 0.5);
+         }
+      }
+
+      &--man {
+         position: relative;
+         background-image: url(../img/sale-man.webp);
+         background-color: $pink-bkg;
+
+         &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background: rgba(33, 22, 22, 0.7);
+            transition: background $animation-speed;
+         }
+
+         &:hover::after {
+            background: rgba(33, 22, 22, 0.5);
+            cursor: pointer;
+         }
+
+         &:focus-within::after {
+            background: rgba(33, 22, 22, 0.5);
+         }
+      }
+
+      &--kids {
+         position: relative;
+         background-image: url(../img/sale-kids.webp);
+         background-color: $pink-bkg;
+
+         &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background: rgba(33, 22, 22, 0.7);
+            transition: background $animation-speed;
+         }
+
+         &:hover::after {
+            background: rgba(33, 22, 22, 0.5);
+            cursor: pointer;
+         }
+
+         &:focus-within::after {
+            background: rgba(33, 22, 22, 0.5);
+         }
+      }
+
+      &--shoes {
+         position: relative;
+         background-image: url(../img/sale-accesories.webp);
+         background-color: $pink-bkg;
+         background-repeat: no-repeat;
+         min-height: 180px;
+         margin: 30px 0 0 0;
+         width: 100%;
+
+         @include tablet {
+            min-height: 116px;
+            margin: 19px 0 0 0;
+         }
+
+         @include mobile {
+            min-height: 111px;
+            background-position: -180px;
+         }
+
+         &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background: rgba(33, 22, 22, 0.7);
+            transition: background $animation-speed;
+         }
+
+         &:hover::after {
+            background: rgba(33, 22, 22, 0.5);
+            cursor: pointer;
+         }
+
+         &:focus-within::after {
+            background: rgba(33, 22, 22, 0.5);
+         }
+      }
+
+      &-text {
+         @include font(16px, 19px);
+         color: $white-text;
+         text-transform: uppercase;
+         text-align: center;
+      }
+
+      &-title {
+         text-transform: uppercase;
+         color: $pink-text;
+         @include font(24px, 29px, 700);
+      }
+   }
+
+   &__link {
+      text-decoration: none;
+      z-index: 2;
+   }
+}

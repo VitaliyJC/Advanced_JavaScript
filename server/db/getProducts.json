@@ -1,0 +1,32 @@
+[
+  {
+    "id_product": 111,
+    "product_name": "ellery x m'o capsule 1",
+    "price": 52.00
+  },
+  {
+    "id_product": 222,
+    "product_name": "ellery x m'o capsule 2",
+    "price": 77.00
+  },
+  {
+    "id_product": 333,
+    "product_name": "ellery x m'o capsule 3",
+    "price": 99.00
+  },
+  {
+    "id_product": 444,
+    "product_name": "ellery x m'o capsule 4",
+    "price": 88.00
+  },
+  {
+    "id_product": 555,
+    "product_name": "ellery x m'o capsule 5",
+    "price": 66.00
+  },
+  {
+    "id_product": 666,
+    "product_name": "ellery x m'o capsule 6",
+    "price": 44.00
+  }
+]

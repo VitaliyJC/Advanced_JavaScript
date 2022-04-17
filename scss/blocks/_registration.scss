@@ -1,0 +1,201 @@
+.registration {
+
+   &__main {
+      @include font(24px, 29px);
+      color: $pink-text;
+      text-transform: uppercase;
+      padding: 60px;
+
+      @include tablet {
+         padding: 60px 0;
+      }
+
+      @include mobile {
+         text-align: center;
+      }
+
+      &-bgc {
+         background-color: #F8F3F4;
+         min-height: 148px;
+      }
+   }
+
+
+   &-wrapper {
+      display: flex;
+
+      @include mobile {
+         flex-direction: column;
+      }
+   }
+
+   &__form {
+      margin: 65px 0 95px 0;
+      max-width: 360px;
+
+      @include tablet {
+         margin: 40px 0 95px 0;
+         min-width: 49%;
+      }
+
+      @include mobile {
+         width: 100%;
+         margin: 40px 0;
+      }
+
+      &-main {
+         display: flex;
+         flex-direction: column;
+      }
+
+      &-text {
+         @include font(16px, 19px, 300);
+         color: $black;
+      }
+
+      &-list {
+         display: flex;
+         padding: 31px 0 0 0;
+      }
+
+      &-item:not(:first-child) {
+         padding: 0 0 0 20px;
+      }
+
+      &-sex {
+         -webkit-appearance: none;
+         -moz-appearance: none;
+         appearance: none;
+         border-radius: 50%;
+         width: 16px;
+         height: 16px;
+         border: 2px solid $grey-text-form;
+         transition: 0.2s all linear;
+         outline: none;
+         margin-right: 5px;
+         position: relative;
+         top: 4px;
+      }
+
+      &-sex:checked {
+         border: 6px solid $pink-btn
+      }
+
+      &-login {
+         display: flex;
+         flex-direction: column;
+      }
+
+      &-name {
+         @include font(13px, 16px, 300);
+         color: $grey-text-form;
+         height: 45px;
+         margin: 20px 0 0 0;
+         padding: 0 0 0 17px;
+      }
+
+      &-details {
+         @include font(16px, 19px, 300);
+         padding: 33px 0 0 0;
+      }
+
+      &-btn {
+         color: $white-text;
+         background-color: $pink-btn;
+         padding: 17px 29px;
+         margin: 40px 0 0 0;
+         text-transform: uppercase;
+         border: none;
+
+         @include font(14px, 17px);
+
+         &:hover {
+            background-color: $pink-effects;
+         }
+
+         &:focus {
+            background-color: $pink-effects;
+            transition: $animation-speed;
+         }
+
+         &:active {
+            background-color: $pink-btn;
+         }
+      }
+
+      &__radio-text {
+         color: $black;
+
+         @include font(11px, 13px, 300);
+      }
+
+      &__help {
+         color: $grey-text-form;
+         padding: 15px 0 0 0;
+
+         @include font(13px, 16px, 300);
+      }
+   }
+
+
+   &__info {
+      margin: 65px 0 0 128px;
+      max-width: 46%;
+
+      @include tablet {
+         margin: 40px 0 0 22px;
+      }
+
+      @include mobile {
+         margin: 0 0 96px 0;
+         max-width: 100%
+      }
+
+      &-main {
+         @include font(24px, 29px, 300);
+         text-transform: uppercase;
+
+         @include tablet {
+            @include font(16px, 19px, 300);
+         }
+      }
+
+      &-programm {
+         @include font(24px, 29px, 300);
+         padding: 22px 0 0 0;
+
+         @include tablet {
+            @include font(16px, 19px, 300);
+            padding: 32px 0 0 0;
+         }
+      }
+
+      &-list {
+         padding: 21px 0 0 0;
+      }
+
+      &-item {
+         @include font(24px, 29px, 300);
+         display: flex;
+         align-items: center;
+
+         &:not(:first-child) {
+            padding: 16px 0 0 0;
+         }
+
+         @include tablet {
+            @include font(16px, 19px, 300);
+         }
+
+         &:before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 16px;
+            margin: 0 22px 0 0;
+            background-image: url(../img/checkmark.svg);
+            background-size: cover;
+         }
+      }
+   }
+}
