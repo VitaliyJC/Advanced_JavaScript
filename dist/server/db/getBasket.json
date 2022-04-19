@@ -1,0 +1,22 @@
+{
+    "amount": 129,
+    "countGoods": 2,
+    "contents": [
+        {
+            "quantity": 1,
+            "id_product": 111,
+            "product_name": "ellery x m'o capsule 1",
+            "price": 52,
+            "webpPath": "img/111.webp",
+            "jpgPath": "img/111.jpg"
+        },
+        {
+            "quantity": 2,
+            "id_product": 222,
+            "product_name": "ellery x m'o capsule 2",
+            "price": 77,
+            "webpPath": "img/222.webp",
+            "jpgPath": "img/222.jpg"
+        }
+    ]
+}
