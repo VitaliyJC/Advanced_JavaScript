@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./build.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+
+    <!--Header_start-->
+    <header class="header">
+
+      <!--Navigation_start-->
+      <div class="header__wrp container">
+
+        <div class="header__logo-form-wrp">
+          <a class="header__logo" href="#">
+            <picture>
+              <source srcset="./img/logo.webp" type="image/webp">
+              <img class="header__logo-img" src="./img/logo.png" alt="logo" loading="lazy">
+            </picture>
+          </a>
+
+          <search></search>
+
+          <!-- <section class="header__search">
+            <h2 class="visually-hidden">Header search</h2>
+            <button class="header__search-btn" type="submit" id="header__search-btn" aria-label="search"
+              @click="showSerch = !showSerch">
+              <svg class="white-icon">
+                <use xlink:href="./img/sprite.svg#loupe"></use>
+              </svg>
+            </button>
+            <form class="header__search-form" action="#" id="header__search-input" @submit.prevent="filter"
+              v-show="showSerch">
+              <label for="search__form" class="visually-hidden">search</label>
+              <input class="header__search-input" type="search" placeholder="Search" id="search__form"
+                v-model="userSearch">
+            </form>
+          </section> -->
+
+
+        </div>
+        <div class="header__wrp-right">
+          <button class="header__menu-btn" type="button" id="header__menu-btn" aria-label="menu"
+            @click="showMenu = !showMenu">
+            <svg class="white-icon">
+              <use xlink:href="./img/sprite.svg#burger"></use>
+            </svg>
+          </button>
+          <a class="header__link" href="registration.html">
+            <svg class="white-icon">
+              <use xlink:href="./img/sprite.svg#person"></use>
+            </svg>
+          </a>
+          <button class="header__link" id="basket" @click="showCart = !showCart">
+            <svg class="white-icon">
+              <use xlink:href="./img/sprite.svg#cart"></use>
+            </svg>
+            <!-- <span class="header__link-value">0</span> -->
+          </button>
+
+          <cart ref="cart" v-show="showCart"></cart>
+
+          <!-- <div class="header__basket" v-show="showCart">
+            <div class="header__basket__row basketHeader">
+              <div>Название товара</div>
+              <div>Количество</div>
+              <div>Цена за шт.</div>
+              <div>Итого</div>
+            </div>
+
+            <div class="header__basket__row" v-for="item of cartItems" :key="item.id_product">
+              <div>{{ item.product_name }}</div>
+              <div>
+                <span class="productCount">{{ item.quantity }}</span> шт.
+              </div>
+              <div>$ {{ item.price }}</div>
+              <div>
+                $<span class="productTotalRow">{{item.quantity*item.price}}</span>
+                <button @click="remove(item)">&times;</button>
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <!--Navigation_end-->
+
+        <!--Menu_start-->
+        <nav class="header__nav" id="menu" v-show="showMenu">
+          <div class="menu__wrapper" id="menu__wrapper">
+            <button class="header__exit-btn" type="button" id="header__exit-btn" aria-label="exit"
+              @click="showMenu = !showMenu">
+              <svg class="exit-icon">
+                <use xlink:href="./img/sprite.svg#exit"></use>
+              </svg>
+            </button>
+            <h2 class="header__nav-title">menu</h2>
+            <ul class="header__nav-list">
+              <li class="header__nav-item nav-sub-item">
+                <h4 class="nav-sub-item-person">
+                  <a class="nav-sub-item__link-person" href="#">man</a>
+                </h4>
+                <ul class="nav-sub-item__title">
+                  <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Accessories</a></li>
+                  <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Bags</a></li>
+                  <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Denim</a></li>
+                  <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">T-Shirts</a></li>
+                </ul>
+              </li>
+              <li class="header__nav-item nav-sub-item">
+                <h4 class="nav-sub-item-person">
+                  <a class="nav-sub-item__link-person" href="#">woman</a>
+                </h4>
+                <ul class="nav-sub-item__title">
+                  <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Accessories</a></li>
+                  <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Polos</a></li>
+                  <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">T-Shirts</a></li>
+                  <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Jackets & Coats</a></li>
+                </ul>
+              </li>
+              <li class="header__nav-item nav-sub-item">
+                <h4 class="nav-sub-item-person">
+                  <a class="nav-sub-item__link-person" href="#">kids</a>
+                </h4>
+                <ul class="nav-sub-item__title">
+                  <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Accessories</a></li>
+                  <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Jackets & Coats</a></li>
+                  <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Polos</a></li>
+                  <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">T-Shirts</a></li>
+                  <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Shirts</a></li>
+                  <li class="nav-sub-item__list"><a class="nav-sub-item__link" href="#">Bags</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!--Menu_end-->
+
+    </header>
+    <!--Header_end-->
+
+    <!--Main_start-->
+    <main>
+
+      <!--Brand_start-->
+      <section class="brand">
+        <picture class="brand__pic">
+          <source class="brand__webp" srcset="./img/man.webp" type="image/webp">
+          <img class="brand__img" src="./img/man.png" alt="man" loading="lazy">
+        </picture>
+        <div class="brand__title-wrp">
+          <h1 class="brand__title">the brand <span class="brand__subtitle">of luxerious <span
+                class="brand__subtitle-pink">fashion</span></span></h1>
+        </div>
+      </section>
+      <!--Brand_end-->
+
+      <!--Sales_start-->
+      <section class="sales container">
+        <h2 class="visually-hidden">sales</h2>
+        <ul class="sales__list">
+          <li class="sales__item sales__item--women">
+            <a href="#" class="sales__link">
+              <p class="sales__item-text">30% off</p>
+              <h3 class="sales__item-title">for women</h3>
+            </a>
+          </li>
+          <li class="sales__item sales__item--man">
+            <a href="#" class="sales__link">
+              <p class="sales__item-text">hot deal</p>
+              <h3 class="sales__item-title">for men</h3>
+            </a>
+          </li>
+          <li class="sales__item sales__item--kids">
+            <a href="#" class="sales__link">
+              <p class="sales__item-text">new arrivals</p>
+              <h3 class="sales__item-title">for kids</h3>
+            </a>
+          </li>
+          <li class="sales__item sales__item--shoes">
+            <a href="#" class="sales__link">
+              <p class="sales__item-text">luxirous & trendy</p>
+              <h3 class="sales__item-title">accesories</h3>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <!--Sales_end-->
+
+      <!--Products_start-->
+      <section class="products container">
+        <h2 class="products__title">Fetured Items</h2>
+        <p class="products__subtitle">Shop for items based on what we featured in this week</p>
+
+        <error ref="error"></error>
+        <products ref="products"></products>
+
+        <!-- <ul class="products__list">
+          <li class="products__item" v-for="product of filtered" :key="product.id_product">
+            <section class="products__list-overlay">
+              <a href="#" class="products__link">
+                <picture>
+                  <source :srcset="product.webpPath" type="image/webp">
+                  <img class="products__item-img" :src="product.jpgPath" :alt="product.product_name">
+                </picture>
+                <div class="products__item-wrapper">
+                  <h3 class="products__item-title">{{product.product_name}}</h3>
+                  <p class="products__item-text">Known for her sculptural takes on traditional tailoring,
+                    Australian
+                    arbiter of cool Kym Ellery teams
+                    up with Moda Operandi.</p>
+                  <p class="products__item-price">$<span class="products__item-value">{{product.price}}</span></p>
+                </div>
+              </a>
+              <button class="products__item-cart" type="button" aria-label="cart" data-productId="0"
+                @click="addProduct(product)">
+                <svg class="white-icon">
+                  <use xlink:href="./img/sprite.svg#cart"></use>
+                </svg>
+                <span class="products__item-cart-text">Add to cart</span>
+              </button>
+            </section>
+          </li>
+        </ul> -->
+
+        <div class="products__btn-wrapper">
+          <button class="products__btn" type="button" aria-label="all_product">Browse All Product</button>
+        </div>
+      </section>
+      <!-- Products_end -->
+
+      <!-- Services_start -->
+      <section class="aside">
+        <div class="container">
+          <ul class="aside__list">
+            <li class="aside__item">
+              <svg class="pink-icon">
+                <use xlink:href="./img/sprite.svg#truk"></use>
+              </svg>
+              <h3 class="aside__item-title">Free Delivery</h3>
+              <p class="aside__item-text">Worldwide delivery on all. Authorit tively morph next-generation innov
+                tion
+                with
+                extensive models.</p>
+            </li>
+            <li class="aside__item">
+              <svg class="pink-icon">
+                <use xlink:href="./img/sprite.svg#percent"></use>
+              </svg>
+              <h3 class="aside__item-title">Sales & discounts</h3>
+              <p class="aside__item-text">Worldwide delivery on all. Authorit tively morph next-generation innov
+                tion
+                with extensive models.</p>
+            </li>
+            <li class="aside__item">
+              <svg class="pink-icon">
+                <use xlink:href="./img/sprite.svg#crown"></use>
+              </svg>
+              <h3 class="aside__item-title">Quality assurance</h3>
+              <p class="aside__item-text">Worldwide delivery on all. Authorit tively morph next-generation innov
+                tion
+                with extensive models.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- Services_end -->
+    </main>
+    <!--Main_end-->
+
+    <!--Footer_start-->
+    <footer class="footer">
+      <div class="footer__sub-rev container">
+        <!-- Review_start -->
+        <section class="footer__about sub-rev">
+          <h2 class="visually-hidden">Blockquote</h2>
+          <div class="footer__review">
+            <picture>
+              <source srcset="./img/face.webp" type="image/webp">
+              <img class="footer__review-icon" src="./img/face.png" alt="face" loading="lazy">
+            </picture>
+            <blockquote class="footer__review-comment">“Vestibulum quis porttitor dui! Quisque viverra nunc mi, a
+              pulvinar
+              purus
+              condimentum“
+            </blockquote>
+          </div>
+          <!-- Review_end -->
+
+          <!-- Subscribe_start -->
+          <section class="footer__subscribe">
+            <h2 class="visually-hidden">Footer subscribe</h2>
+            <p class="footer__subscribe__heading">Subscribe</p>
+            <p class="footer__subscribe__text">for our newletter and promotion</p>
+            <form class="footer__subscribe__form" action="#">
+              <label for="email" class="visually-hidden">email</label>
+              <input class="footer__subscribe__form-input" type="email" value="Enter Your Email" id="email">
+              <button class="footer__subscribe__form-btn" type="submit" aria-label="subscribe">Subscribe</button>
+            </form>
+          </section>
+        </section>
+        <!-- Subscribe_end -->
+      </div>
+
+      <!-- Social_start -->
+      <div class="footer__box__wrapper">
+        <section class="footer__box container">
+          <h2 class="visually-hidden">Socials</h2>
+          <!-- Copy_start -->
+          <p class="footer__copy">&copy;2021 Brand All Rights Reserved.</p>
+          <!-- Copy_end -->
+          <section class="footer__socials">
+            <h3 class="visually-hidden">Socials links</h3>
+            <ul class="footer__socials__list">
+              <li class="footer__socials__item">
+                <a class="footer__socials__item-link" href="#">
+                  <svg class="black-icon">
+                    <use xlink:href="./img/sprite.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__socials__item">
+                <a class="footer__socials__item-link" href="#">
+                  <svg class="black-icon">
+                    <use xlink:href="./img/sprite.svg#inst"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__socials__item">
+                <a class="footer__socials__item-link" href="#">
+                  <svg class="black-icon">
+                    <use xlink:href="./img/sprite.svg#pin"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__socials__item">
+                <a class="footer__socials__item-link" href="#">
+                  <svg class="black-icon">
+                    <use xlink:href="./img/sprite.svg#twit"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </section>
+          <!-- Social_end-->
+        </section>
+      </div>
+    </footer>
+    <!--Footer_end-->
+
+  </div>
+
+  <!--Script_start-->
+  <script src="./js/vue.js"></script>
+  <!-- <script src="./js/ProductComponent.js"></script>
+  <script src="./js/SearchComponent.js"></script>
+  <script src="./js/CartComponent.js"></script>
+  <script src="./js/ErrorComp.js"></script>
+  <script src="./js/main.js"></script> -->
+  <!--Script_end-->
+</body>
+
+</html>
